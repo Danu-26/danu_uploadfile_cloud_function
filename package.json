@@ -1,0 +1,22 @@
+{
+  "name": "danu_uploadfile_cloud_function",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx functions-framework --target=danuselfuploadfile --signature-type=http --port=8080",
+    "deploy": "gcloud functions deploy danuuploadapp --region=asia-south1 --runtime=nodejs18 --memory=128MB --timeout=60 --allow-unauthenticated --entry-point=danuselfuploadfile --trigger-http"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^6.3.0",
+    "busboy": "^1.6.0",
+    "cors": "^2.8.5",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@google-cloud/functions-framework": "^3.1.2"
+  }
+}
